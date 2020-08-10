@@ -1,8 +1,10 @@
 'use strict'
 
 var app = require('./app');
+var port = 3700;
+app.set('port', process.env.PORT || port)
 
-app.listen(3700, () => 
+app.listen(app.get('port'), () => 
 {
- 	console.log("Servidor Corriendo Correctamente En la URL: localhost:3700");
+		console.log("Servidor Corriendo Correctamente En Puerto: "+app.get('port'));
 });
